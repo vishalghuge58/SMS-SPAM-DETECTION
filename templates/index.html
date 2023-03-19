@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Prediction</title>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #292a2d;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      p.result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #d3d3d3;
+        border-radius: 5px;
+        font-size: 18px;
+      }
+    </style>
+    <script>
+      function clearTextarea() {
+        document.getElementById("text").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <form method="POST" action="/result">
+      <label for="text">Enter your text:</label>
+      <br>
+      <textarea id="text" name="user_text" rows="4" cols="50"></textarea>
+      <br>
+      <button type="submit">Predict</button>
+      {% if result %}
+      <p>The predicted result is: {{ result }}</p>
+    {% endif %}
+    </form>
+    <br>
+  
+  </body>
+</html>
